@@ -2,10 +2,23 @@ package prak2;
 
 public class Element {
 	
+	String word;
 	int value;
 	Element prev;
 	Element next;
 	
+	public Element(String word) {
+		this.word= word;
+	}
+	
+	public String getWord() {
+		return word;
+	}
+
+	public void setWord(String word) {
+		this.word = word;
+	}
+
 	public int getValue() {
 		return value;
 	}
