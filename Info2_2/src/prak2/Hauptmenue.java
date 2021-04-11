@@ -8,6 +8,9 @@ public class Hauptmenue {
 
 		int test = 0;
 		while (test == 0) {
+			
+			Liste list = new Liste();
+			
 			String menueValue = "";
 			System.out.println("Was wollen Sie machen?");
 
@@ -24,6 +27,11 @@ public class Hauptmenue {
 				break;
 			case "hinzufuegen":
 				System.out.println("3");
+				System.out.print("Deutsch: ");
+				String ger = sc.next();
+				System.out.print("Englisch: ");
+				String eng = sc.next();
+				list.add(ger, eng);
 				break;
 			case "loeschen":
 				System.out.println("4");
@@ -33,6 +41,7 @@ public class Hauptmenue {
 				break;
 			case "anzeigen":
 				System.out.println("6");
+				Anzeigen anzeigen = new Anzeigen();
 				break;
 			default:
 				System.out.println("Eingabe fehlerhaft");
