@@ -6,46 +6,49 @@ public class Hauptmenue {
 
 	public Hauptmenue() {
 
-		int test = 0;
-		while (test == 0) {
-			
-			Liste list = new Liste();
-			
+		int stop = 0;
+		Liste list = new Liste();
+
+		Scanner sc = new Scanner(System.in);
+		while (stop == 0) {
+
 			String menueValue = "";
 			System.out.println("Was wollen Sie machen?");
+			String eingabe = "";
 
-			Scanner sc = new Scanner(System.in);
-			String eingabe = sc.next();
+			 eingabe = sc.next();
 			menueValue = eingabe;
 
 			switch (menueValue) {
-			case "einlesen":
-				System.out.println("1");
+			case "read":
 				break;
-			case "speichern":
-				System.out.println("2");
+			case "write":
 				break;
-			case "hinzufuegen":
-				System.out.println("3");
+			case "add":
 				System.out.print("Deutsch: ");
 				String ger = sc.next();
 				System.out.print("Englisch: ");
 				String eng = sc.next();
 				list.add(ger, eng);
 				break;
-			case "loeschen":
-				System.out.println("4");
+			case "delete":
+				System.out.print("Vokabel eingeben welche geloescht werden soll (auf Deutsch): ");
+				String gerDel = sc.next();
+				list.delete(gerDel);
 				break;
-			case "abfragen":
-				System.out.println("5");
+			case "call":
+				list.call();
 				break;
-			case "anzeigen":
-				System.out.println("6");
-				Anzeigen anzeigen = new Anzeigen();
+			case "show":
+				list.show();
+				break;
+			case "close":
+				stop = 1;
+				sc.close();
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Eingabe fehlerhaft");
-				test = 1;
 				break;
 			}
 		}

@@ -4,7 +4,6 @@ public class Element {
 
 	String ger, eng;
 	int value = 0;
-//	int id = 0;
 	Element prev;
 	Element next;
 
@@ -13,15 +12,6 @@ public class Element {
 	public Element() {
 	
 	}
-
-//	public int getId() {
-//		return id;
-//	}
-//	
-//	
-//	public void setId(int id) {
-//		this.id = id;
-//	}
 
 	public String getGer() {
 		return ger;
