@@ -1,10 +1,11 @@
 package prak2;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Hauptmenue {
 
-	public Hauptmenue() {
+	public Hauptmenue() throws IOException {
 
 		int stop = 0;
 		Liste list = new Liste();
@@ -24,6 +25,7 @@ public class Hauptmenue {
 				list.read();
 				break;
 			case "write":
+				list.write();
 				break;
 			case "add":
 				System.out.print("Deutsch: ");

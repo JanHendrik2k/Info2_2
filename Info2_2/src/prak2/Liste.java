@@ -1,7 +1,11 @@
 package prak2;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -153,7 +157,7 @@ public class Liste {
 			}
 			current = first;
 
-		}		
+		}
 	}
 
 	public void read() {
@@ -162,22 +166,37 @@ public class Liste {
 			String[] parts;
 			String ger;
 			String eng;
-		      File file = new File(DEFAULTPATH + "Vokabeln.txt");
-		      Scanner myReader = new Scanner(file);
-		      while (myReader.hasNextLine()) {
-		        String data = myReader.nextLine();
-		        line = data;
-		        parts = line.split("-");
-		        ger = parts[0];
-		        eng = parts[1];
-		        add(ger, eng);
-		      }
-		      myReader.close();
-		    } catch (FileNotFoundException e) {
-		      System.out.println("HOPPALA, es ist ein Fehler aufgetreten :(.");
-		      e.printStackTrace();
-		    }
-		
+			File file = new File(DEFAULTPATH + "Vokabeln.txt");
+			Scanner myReader = new Scanner(file);
+			while (myReader.hasNextLine()) {
+				String data = myReader.nextLine();
+				line = data;
+				parts = line.split("-");
+				ger = parts[0];
+				eng = parts[1];
+				add(ger, eng);
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("HOPPALA, es ist ein Fehler aufgetreten :(.");
+			e.printStackTrace();
+		}
+
 	}
 
+	public void write() throws IOException {
+
+		FileWriter fw = new FileWriter(DEFAULTPATH + "Vokabeln.txt", true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		Element current = first;
+		if (current == null) {
+			System.out.println("Die Liste ist leer :( es kann nix gespeichert werden.");
+		}
+		while (current != null) {
+			bw.write("\n" + current.ger + "-" + current.eng);
+			bw.newLine();
+			current = current.next;
+		}
+		bw.close();
+	}
 }
