@@ -21,6 +21,7 @@ public class Hauptmenue {
 
 			switch (menueValue) {
 			case "read":
+				list.read();
 				break;
 			case "write":
 				break;

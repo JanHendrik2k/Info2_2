@@ -1,11 +1,14 @@
 package prak2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class Liste {
 
 	private Element first;
+	private final String DEFAULTPATH = "src/prak2/";
 
 	public Liste() {
 		first = null;
@@ -151,6 +154,30 @@ public class Liste {
 			current = first;
 
 		}		
+	}
+
+	public void read() {
+		try {
+			String line = "";
+			String[] parts;
+			String ger;
+			String eng;
+		      File file = new File(DEFAULTPATH + "Vokabeln.txt");
+		      Scanner myReader = new Scanner(file);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
+		        line = data;
+		        parts = line.split("-");
+		        ger = parts[0];
+		        eng = parts[1];
+		        add(ger, eng);
+		      }
+		      myReader.close();
+		    } catch (FileNotFoundException e) {
+		      System.out.println("HOPPALA, es ist ein Fehler aufgetreten :(.");
+		      e.printStackTrace();
+		    }
+		
 	}
 
 }
