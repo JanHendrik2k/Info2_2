@@ -1,9 +1,14 @@
 Ja;yes
+asd
 Nein;no
+aaa;bbsdf
 Vielleicht;maybe
 Bitte;please
 Danke;thank you
+a ; a ; a  ; a
+Entschuldigung;sorry
 Hotel?;Trivago!
-Eigelb;yellow from the egg
-Sonntag;sunday
-Heute;today
+   ;   
+
+as
+d

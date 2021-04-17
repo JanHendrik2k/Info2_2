@@ -2,10 +2,9 @@ package prak2;
 
 public class Element {
 
-	String ger, eng;
-	int value = 0;
-	Element prev;
-	Element next;
+	private String ger, eng;
+	private Element prev;
+	private Element next;
 
 
 
@@ -32,14 +31,6 @@ public class Element {
 		this.eng = eng;
 	}
 
-
-	public int getValue() {
-		return value;
-	}
-
-	public void setValue(int value) {
-		this.value = value;
-	}
 
 	public Element getPrev() {
 		return prev;
