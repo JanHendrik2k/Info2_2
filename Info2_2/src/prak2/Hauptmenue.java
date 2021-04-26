@@ -8,9 +8,11 @@ public class Hauptmenue {
 	/**
 	 * Oeffnet bei verschiedenen Konsolenabfragen verschiedene Methoden
 	 */
+	private Liste list;
+
 	public Hauptmenue() throws IOException {
 
-		Liste list = new Liste();
+		list = new Liste();
 
 		Scanner sc = new Scanner(System.in);
 		while (true) {

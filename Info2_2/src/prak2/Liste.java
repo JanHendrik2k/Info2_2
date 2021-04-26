@@ -67,7 +67,6 @@ public class Liste {
 
 	/**
 	 * Loescht ein Element in der Liste (Vokabel wird auf Deutsch gesucht)
-	 * 
 	 * @param elem Deutsche Vokabel, gibt an, welches Element geloescht werden soll
 	 */
 	public void delete(String elem) {
